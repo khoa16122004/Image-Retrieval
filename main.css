@@ -1,0 +1,111 @@
+.input-group {
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex;
+    /* background-color: DodgerBlue; */
+}
+
+
+.control-first .box-input{
+    height: 33px;
+    width: 300px;
+}
+
+.btn {
+    margin: 15px;
+    height: 35px;
+}
+
+
+
+/*switch feature*/
+
+/* switch one */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+#first-switch-control {
+    margin-top: 8px ;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 80px;
+	height: 40px;
+	background: grey;
+	display: block;
+	border-radius: 20px;
+	position: relative;
+	margin-left: 15px;
+	/* margin-right: 10px; */
+	margin-top: 12px;
+}
+
+#first-switch-control:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 35px;
+	height: 30px;
+	background: #fff;
+	border-radius: 30px;
+	transition: 0.3s;
+}
+
+#first-switch:checked + #first-switch-control{
+	background: #1f30cc;
+}
+
+#first-switch:checked + #first-switch-control:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+#first-switch-control:active:after {
+	width: 50px;
+}
+
+
+
+/* switch two */
+#second-switch-control {
+    margin-top: 8px ;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 80px;
+	height: 40px;
+	background: grey;
+	display: block;
+	border-radius: 20px;
+	position: relative;
+	margin-left: 15px;
+	/* margin-right: 10px; */
+	margin-top: 12px;
+}
+
+#second-switch-control:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 35px;
+	height: 30px;
+	background: #fff;
+	border-radius: 30px;
+	transition: 0.3s;
+}
+
+#second-switch:checked + #second-switch-control{
+	background: #1f30cc;
+}
+
+#second-switch:checked + #second-switch-control:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+#second-switch-control:active:after {
+	width: 50px;
+}
