@@ -29,4 +29,4 @@ def image_db(image_dataset):
 
   image_features_normalized = [feature / torch.norm(feature, dim=-1, keepdim=True) for feature in image_feature] # chuẩn hóa
 
-  return image_features_normalized
+  return image_features_normalized, model
