@@ -6,7 +6,7 @@ The dataset of some animals was collected by me. Unfortunately, I cannot provide
 
 ### Method
 
-To perform image retrieval, we can use the CLIP (Contrastive Language-Image Pretraining) model along with Faiss, a library for efficient similarity search and clustering of dense vectors.
+To perform image retrieval, we can use the [https://github.com/openai/CLIP]{CLIP} (Contrastive Language-Image Pretraining) model along with [https://github.com/facebookresearch/faiss]{Faiss}, a library for efficient similarity search and clustering of dense vectors.
 
 Here are the high-level steps to follow:
 
