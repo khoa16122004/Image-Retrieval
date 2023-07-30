@@ -9,25 +9,26 @@ from tqdm import tqdm
 import clip
 import torch
 
-def faiss_add(features_dim, image_features):
-  index = faiss.IndexFlatL2(features_dim)
-  print("The model is ", index.is_trained)
-  print("Insert process\n")
-  for feature_vector in tqdm(image_features):
-    index.add(feature_vector)
-  return index
+def faiss_add(feature_dim, image_features):
+    index = faiss.IndexFlatL2(feature_dim)
 
-def search(input_text, index, k):
-    D, I = index.search(input_text,k)
+    if not index.is_trained:
+        print("Model Faiss chưa được train")
+    if index.is_trained:
+        print("\n\nStore vector process\n")
+        for features_vector in tqdm(image_features):
+            index.add(features_vector)
+    return index
+
+def search(text_feature, index, k):
+    D, I = index.search(text_feature, k)
     return D, I
 
 def visual_result(I, image_dataset):
     num_images = len(I[0])
-    fig, axes = plt.subplots(1, num_images, figsize=(15, 5))  # Create subplots
+    fig, axes = plt.subplots(1, num_images, figsize=(15, 5))
 
-    i = 0
-    for index in I[0]:
+    for i, index in enumerate(I[0]):
         axes[i].imshow(image_dataset[index])
-        axes[i].axis('off')  # Turn off axis labels
-        i += 1
+        axes[i].axis("off")
     plt.show()
